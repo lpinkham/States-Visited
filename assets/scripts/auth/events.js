@@ -38,10 +38,17 @@ const onSignOut = event => {
     .catch(ui.signOutFailure)
 }
 
+const onMyAccount = event => {
+  // event.preventDefault()
+  ui.showMyAccount()
+}
+
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onMyAccount
 
 }

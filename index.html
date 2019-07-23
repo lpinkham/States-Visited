@@ -13,7 +13,7 @@
     </head>
     <body>
       <!-- stuff added from tic tac toe for user login -->
-      <!-- <div class="my-account" id="account-text"><button class="hide" id="account-btn">My Account</button>
+      <div class="my-account" id="account-text"><button class="hide" id="account-btn">My Account</button>
     </div>
     <div class="hide" id="myAccount">
       <form id="change-password" class="">
@@ -25,16 +25,16 @@
       <form id="sign-out" class="">
         <button class="btn-primary">Sign Out</button>
       </form>
-    </div> -->
+    </div>
       <h5 id="message" class="message-header"></h5>
 
       <div id="sign-in-up">
       <div class="form">
-      <!-- <form id="sign-in" class="center">
+      <form id="sign-in" class="center">
         <input type="email" name="credentials[email]" placeholder="Enter email address"><br />
         <input type="password" name="credentials[password]" placeholder="Password"><br />
         <button class="btn-primary" id="sign-in-btn">Sign-In!</button>
-      </form> -->
+      </form>
 <!-- <h6 id="or" class="center">or</h6> -->
       <form id="sign-up" class="center">
         <h5>Sign Up</h5>
@@ -59,12 +59,19 @@
           <div class="col-12 col-md-6 box">States Visited</div>
           <div class="col-12 col-md-6 box">States Not Visited</div>
         </div>
-        <!-- <div class="row">
-            <div class="col-12 box">Account Info</div>
-            <div class="col-12 col-md-6 box"><button id="getStatesButton" class="btn btn-info mr-2">Get Your list of States!</button></div>
-            <div class="col-12 col-md-6 box"><button id="loginButton" class="btn btn-info mr-2">Login to your account</button></div>
-            <div class="col-12 col-md-6 box"><button id="createAccountButton" class="btn btn-info mr-2">Create an account</button></div>
-            <div class="col-12 col-md-6 box"><button id="changePasswordButton" class="btn btn-info mr-2">Change your password</button></div>
-        </div> -->
+        <div class="row">
+            <div class="col-12">
+                <button id="create-state-btn" class="btn btn-info mr-2">Create Your list of States!</button></div>>
+          <div class="col-12">
+              <form id="create-state" class="center hide">
+              <h5>Add your state to your list</h5>
+              <input type="text" name="state_name" placeholder="State Name"><br>
+              <input type="text" name="date_visited" placeholder="Date"><br>
+              <input type="text" name="highlight" placeholder="Highlight of your visit"><br>
+              <input type="text" name="revisit" placeholder="Would you go back?"><br>
+              <button class="btn-primary">Add!</button>
+            </form>
+          </div>
+        </div>
     </body>
 </html>

@@ -26,3 +26,26 @@ body {
 h1 {
   color: blue;
 }
+
+.hide {
+  display: none; // use none or visible
+}
+
+.message-header {
+  text-align: center;
+}
+
+.my-account {
+  font-size: .75em;
+  text-align: right;
+}
+.sign-in-button {
+  border: 0;
+  font-family: cursive;
+  text-align: center;
+}
+
+.sign-in {
+  margin: 10px;
+  padding: 40px;
+}

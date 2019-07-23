@@ -18,7 +18,6 @@ const onSignIn = event => {
   const formData = getFormFields(form)
   api.signIn(formData)
     .then(ui.signInSuccessful)
-    .then(gameLogic.clearGameHistory)
     .catch(ui.signInFailure)
 }
 
@@ -39,8 +38,12 @@ const onSignOut = event => {
 }
 
 const onMyAccount = event => {
-  // event.preventDefault()
+  event.preventDefault()
   ui.showMyAccount()
+}
+const onCreateState = event => {
+  event.preventDefault()
+  ui.showStateForm()
 }
 
 
@@ -49,6 +52,7 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onMyAccount
+  onMyAccount,
+  onCreateState
 
 }

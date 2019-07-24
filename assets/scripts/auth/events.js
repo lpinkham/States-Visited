@@ -80,6 +80,13 @@ const onGetAllState = (event) => {
     .catch(ui.failure)
 }
 
+// need to use userID to only pull thier states
+const onGetYourStates = (event) => {
+  api.getYourStates()
+    .then(ui.getStatesSuccess)
+    .catch(ui.failure)
+}
+
 // const onClearBooks = (event) => {
 //   event.preventDefault()
 //   ui.clearBooks()
@@ -112,5 +119,6 @@ module.exports = {
   onCreateState,
   onCreateStateForm,
   onUpdateState,
-  onGetAllState
+  onGetAllState,
+  onGetYourStates
 }

@@ -41,9 +41,9 @@ const signOut = () => {
 }
 
 const createNewState = formData => {
-  console.log('formData:', formData)
+  // console.log('formData:', formData)
   // console.log('store.user.id is ', store.user.id)
-  // console.log('in createNewState and store.user.token is ', store.user.token)
+  console.log('in createNewState and store.user.token is ', store.user.token)
   return $.ajax({
     url: config.apiUrl + '/states/',
     method: 'POST',
@@ -75,6 +75,17 @@ const getStates = () => {
     // data: formData.state
   })
 }
+
+const getYourStates = () => {
+  return $.ajax({
+    url: config.apiUrl + '/states/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 // added for Handlebars
 const getBooks = function () {
   return $.ajax({
@@ -100,5 +111,6 @@ module.exports = {
   updateState,
   getStates,
   getBooks,
-  deleteBook
+  deleteBook,
+  getYourStates
 }

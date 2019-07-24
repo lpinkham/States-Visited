@@ -6,13 +6,21 @@ $body-bg-color: $gray-200;
 $font-color: $light;
 
 body {
-  background-color: $body-bg-color;
-  padding-top: 80px;
+  background-color: $white;
+  padding-top: 10px;
+}
+
+h1 {
+  color: dark gray;
+  text-align: center;
+}
+form {
+  margin: 20px;
 }
 
 .box {
   align-items: center;
-  background-color: $secondary;
+  background-color: $white;
   border: 1px solid $white;
   color: $font-color;
   display: flex;
@@ -20,16 +28,21 @@ body {
   justify-content: center;
 }
 
-.alt-color {
-  background-color: $alt-color;
+.center {
+  align-items: center;
+  text-align: center;
 }
 
-h1 {
-  color: blue;
-}
+// .alt-color {
+//   background-color: $alt-color;
+// }
 
 .hide {
   display: none; // use none or visible
+}
+
+.map-image {
+  width: 90%;
 }
 
 .message-header {

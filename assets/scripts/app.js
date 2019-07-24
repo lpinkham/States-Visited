@@ -1,7 +1,7 @@
 'use strict'
 
 const authEvents = require('./auth/events')
-const bookEvents = require('./auth/events.js')
+// const bookEvents = require('./auth/events.js')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -12,7 +12,7 @@ const bookEvents = require('./auth/events.js')
 $(() => {
   // your JS code goes here
   //Handlebars
-bookEvents.addHandlers()
+// bookEvents.addHandlers()
   // end of handlebars
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
@@ -23,4 +23,5 @@ bookEvents.addHandlers()
   $('#create-state').on('submit', authEvents.onCreateState)
   $('#update-state').on('submit', authEvents.onUpdateState)
   $('#get-all-states').on('click', authEvents.onGetAllState)
+  $('#view-your-states-btn').on('click', authEvents.onGetYourStates)
 })

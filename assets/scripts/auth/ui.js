@@ -2,20 +2,20 @@
 
 const store = require('../store')
 // added for handlebars
-const showBooksTemplate = require('../templates/state-listing.handlebars')
+const showStatesTemplate = require('../templates/state-listing.handlebars')
 
-const getBooksSuccess = (data) => {
-  console.log('in getBooksSuccess', data)
+const getStatesSuccess = (data) => {
+  // console.log('in getBooksSuccess', data)
 
   // 2. use the template file as a functions
   // 3. pass the template file an object as as an argument
   // 4. will return an interpolated HTML string
 $('.content').html("help!!!!!!!!!")
-  const showBooksHtml = showBooksTemplate({ states: data.states })
-  console.log('showBooksHtml ', showBooksHtml)
+  const showStatesHtml = showStatesTemplate({ states: data.states })
+  // console.log('showBooksHtml ', showBooksHtml)
   // 5. Insert the HTML string onto the page using jQuery
   // use .append or .html
-  $('.content').html(showBooksHtml)
+  $('.content').html(showStatesHtml)
 }
 
 const clearBooks = () => {
@@ -119,5 +119,5 @@ module.exports = {
   signOutFailure,
   showMyAccount,
   showStateForm,
-  getBooksSuccess
+  getStatesSuccess
 }

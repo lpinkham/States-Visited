@@ -73,46 +73,33 @@ const onUpdateState = event => {
     })
 }
 
-const onGetAllState = event => {
-  event.preventDefault()
-  // const form = event.target
-  // const formData = getFormFields(form)
-
-  api.getStates()
-    .then(() => {
-      console.log("Got all states!")
-    })
-    .catch(() => {
-      console.log("Can't get all states!")
-    })
-}
 // ADDED for Handlebars
-const onGetBooks = (event) => {
-  // console.log('in onGetBooks')
+const onGetAllState = (event) => {
   api.getStates()
-    .then(ui.getBooksSuccess)
+    .then(ui.getStatesSuccess)
     .catch(ui.failure)
 }
 
-const onClearBooks = (event) => {
-  event.preventDefault()
-  ui.clearBooks()
-}
-const onDeleteBook = function (event) {
-  // we are going to get the id back form the DOM data using jQuery
-  const id = $(event.target).data('id')
-  api.deleteBook(id)
-    .then(() => {
-      onGetBooks(event)
-    })
-    .catch(ui.failure)
-}
-
-const addHandlers = () => {
-  $('#getBooksButton').on('click', onGetBooks)
-  $('#clearBooksButton').on('click', onClearBooks)
-  $('body').on('click', '.delete-book', onDeleteBook)
-}
+// const onClearBooks = (event) => {
+//   event.preventDefault()
+//   ui.clearBooks()
+// }
+// const onDeleteBook = function (event) {
+//   // we are going to get the id back form the DOM data using jQuery
+//   const id = $(event.target).data('id')
+//   api.deleteBook(id)
+//     .then(() => {
+//       onGetBooks(event)
+//     })
+//     .catch(ui.failure)
+// }
+//can delete addHandlers after I have everything working. Commenting out as I
+// remove the reference to them.
+// const addHandlers = () => {
+  // $('#get-all-states').on('click', onGetBooks)
+  // $('#clearBooksButton').on('click', onClearBooks)
+  // $('body').on('click', '.delete-book', onDeleteBook)
+// }
 
 // end of added for handlebars
 
@@ -125,6 +112,5 @@ module.exports = {
   onCreateState,
   onCreateStateForm,
   onUpdateState,
-  onGetAllState,
-  addHandlers
+  onGetAllState
 }

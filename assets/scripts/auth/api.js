@@ -50,18 +50,18 @@ const createNewState = formData => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: formData.state
+    data: formData
   })
 }
 
 const updateState = formData => {
   return $.ajax({
-    url: config.apiUrl + '/states/' + state.id,
+    url: config.apiUrl + '/states/' + formData.state.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: formData.state
+    data: formData
   })
 }
 
@@ -75,6 +75,21 @@ const getStates = () => {
     // data: formData.state
   })
 }
+// added for Handlebars
+const getBooks = function () {
+  return $.ajax({
+    url: config.apiUrl + '/states'
+  })
+}
+
+const deleteBook = function (id) {
+  return $.ajax({
+    // url: `${config.apiUrl/books/${id}}`, this is using string interpolation.
+    url: config.apiUrl + '/states/' + id,
+    method: 'DELETE'
+  })
+}
+// end of added for handlebars
 
 module.exports = {
   signUp,
@@ -83,5 +98,7 @@ module.exports = {
   signOut,
   createNewState,
   updateState,
-  getStates
+  getStates,
+  getBooks,
+  deleteBook
 }

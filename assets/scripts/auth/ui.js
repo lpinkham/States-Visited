@@ -1,6 +1,31 @@
 'use strict'
 
 const store = require('../store')
+// added for handlebars
+const showBooksTemplate = require('../templates/state-listing.handlebars')
+
+const getBooksSuccess = (data) => {
+  console.log('in getBooksSuccess', data)
+
+  // 2. use the template file as a functions
+  // 3. pass the template file an object as as an argument
+  // 4. will return an interpolated HTML string
+$('.content').html("help!!!!!!!!!")
+  const showBooksHtml = showBooksTemplate({ states: data.states })
+  console.log('showBooksHtml ', showBooksHtml)
+  // 5. Insert the HTML string onto the page using jQuery
+  // use .append or .html
+  $('.content').html(showBooksHtml)
+}
+
+const clearBooks = () => {
+  $('.content').empty()
+}
+
+const failure = (error) => {
+  console.error(error)
+}
+// end of added for handlebars
 
 // helper function
 const successMessage = message => {
@@ -93,5 +118,6 @@ module.exports = {
   signOutSuccessful,
   signOutFailure,
   showMyAccount,
-  showStateForm
+  showStateForm,
+  getBooksSuccess
 }

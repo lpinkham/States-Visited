@@ -86,6 +86,35 @@ const onGetAllState = event => {
       console.log("Can't get all states!")
     })
 }
+// ADDED for Handlebars
+const onGetBooks = (event) => {
+  // console.log('in onGetBooks')
+  api.getStates()
+    .then(ui.getBooksSuccess)
+    .catch(ui.failure)
+}
+
+const onClearBooks = (event) => {
+  event.preventDefault()
+  ui.clearBooks()
+}
+const onDeleteBook = function (event) {
+  // we are going to get the id back form the DOM data using jQuery
+  const id = $(event.target).data('id')
+  api.deleteBook(id)
+    .then(() => {
+      onGetBooks(event)
+    })
+    .catch(ui.failure)
+}
+
+const addHandlers = () => {
+  $('#getBooksButton').on('click', onGetBooks)
+  $('#clearBooksButton').on('click', onClearBooks)
+  $('body').on('click', '.delete-book', onDeleteBook)
+}
+
+// end of added for handlebars
 
 module.exports = {
   onSignUp,
@@ -96,5 +125,6 @@ module.exports = {
   onCreateState,
   onCreateStateForm,
   onUpdateState,
-  onGetAllState
+  onGetAllState,
+  addHandlers
 }

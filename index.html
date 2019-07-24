@@ -65,13 +65,32 @@
           <div class="col-12">
               <form id="create-state" class="center hide">
               <h5>Add your state to your list</h5>
-              <input type="text" name="state_name" placeholder="State Name"><br>
-              <input type="text" name="date_visited" placeholder="Date"><br>
-              <input type="text" name="highlight" placeholder="Highlight of your visit"><br>
-              <input type="text" name="revisit" placeholder="Would you go back?"><br>
+              <input type="text" name="state[state_name]" required placeholder="State Name"><br>
+              <input type="text" name="state[date_visited]" placeholder="YYYY-MM-DD" required
+                  pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+                  title="Enter a date in this format YYYY-MM-DD"/><br>
+              <input type="text" name="state[highlight]" placeholder="Highlight of your visit"><br>
+              <input type="radio" name="state[revisit]" value="true" checked>Yes, I would go back<br>
+              <input type="radio" name="state[revisit]" value="false"> No, I wouldn't go back<br>
               <button class="btn-primary">Add!</button>
             </form>
+            <!-- <form id="update-state" class="center">
+            <h5>Update your state</h5>
+            <input type="text" name="state[state_name]" required placeholder="State Name"><br>
+            <input type="text" name="state[date_visited]" placeholder="YYYY-MM-DD" required
+                pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+                title="Enter a date in this format YYYY-MM-DD"/><br>
+            <input type="text" name="state[highlight]" placeholder="Highlight of your visit"><br>
+            <input type="radio" name="state[revisit]" value="true" checked>Yes, I would go back<br>
+            <input type="radio" name="state[revisit]" value="false"> No, I wouldn't go back<br>
+            <button class="btn-primary">Update!</button>
+          </form> -->
           </div>
+        </div>
+        <div class="row">
+            <div class="col-12 box">get all states</div>
+            <div class="col-12 col-md-6 box"><button class="btn-primary" id="get-all-states">See all states</button></div>
+            <div class="col-12 col-md-6 box"></div>
         </div>
     </body>
 </html>

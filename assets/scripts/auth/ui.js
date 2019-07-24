@@ -79,8 +79,6 @@ const showMyAccount = () => {
 }
 
 const showStateForm = () => {
-  console.log('in showStateForm')
-  failureMessage('show state form')
   $('#create-state').show()
 }
 module.exports = {

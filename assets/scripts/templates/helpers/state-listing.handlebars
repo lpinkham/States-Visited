@@ -1,4 +1,17 @@
-{{#each books as |book|}}
+{{#each states as |state|}}
+  <section data-id="{{state.id}}">
+    <h6>State Name:</h6>
+    <h3>
+      {{limit state.State_name 15}}
+    </h3>
+    <p>
+
+    </p>
+  </section>
+
+{{/each}}
+
+<!-- {{#each books as |book|}}
   {{log book}}
   <section data-id="{{book.id}}">
     <h6>Title:</h6>
@@ -13,8 +26,8 @@
         No author provided.
       {{/if}}
     </p>
-    <!-- {{> partial}} -->
+    {{> partial}}
     <button data-id="{{book.id}}" class="btn btn-danger delete-book">Delete Book!</button>
   </section>
 
-{{/each}}
+{{/each}} -->

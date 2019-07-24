@@ -25,25 +25,63 @@ const changePassword = formData => {
     data: formData,
     method: 'PATCH',
     headers: {
-      Authorization: 'Token token=' + store.user.token // store is an object that all these files have access to if you require the store file
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
-const signOut = () => { // we aren't asking for any args so we don't need the formData here. it can be changed to ()
+const signOut = () => {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + store.user.token // store is an object that all these files have access to if you require the store file
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
+const createNewState = formData => {
+  console.log('formData:', formData)
+  // console.log('store.user.id is ', store.user.id)
+  // console.log('in createNewState and store.user.token is ', store.user.token)
+  return $.ajax({
+    url: config.apiUrl + '/states/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData.state
+  })
+}
+
+const updateState = formData => {
+  return $.ajax({
+    url: config.apiUrl + '/states/' + state.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData.state
+  })
+}
+
+const getStates = () => {
+  return $.ajax({
+    url: config.apiUrl + '/states/',
+    method: 'GET'
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // },
+    // data: formData.state
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createNewState,
+  updateState,
+  getStates
 }

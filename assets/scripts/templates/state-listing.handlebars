@@ -1,24 +1,52 @@
 {{#each states as |state|}}
   <section data-id="{{state.id}}">
-    <h6>State Name:</h6>
-    <h3>
-      {{state.state_name}}
-    </h3>
-    <h6>Date Visited:</h6>
-    <h3>
-      {{state.date_visited}}
-    </h3>
-    <h6>Highlights:</h6>
-    <h3>
-      {{state.highlight}}
-    </h3>
-    <h6>Revisit:</h6>
-    <h3>
-      {{state.revisit}}
-    </h3>
+    <table>
+      <tr>
+        <td><h5>State Name:</h5></td>
+        <td><p>  {{state.state_name}}  </p></td>
+      </tr>
+      <tr>
+        <td><h5>Date Visited:</h5></td>
+        <td><p>  {{state.date_visited}}  </p></td>
+      </tr>
+      <tr>
+          <td><h5>Highlights:</h5></td>
+          <td><p> {{state.highlight}}  </p></td>
+      </tr>
+      <tr>
+        <td><h5>Revisit:</h5></td>
+        <td><p>  {{state.revisit}} </p></td>
+      </tr>
+  </table>
     <p>
 
     </p>
   </section>
 
 {{/each}}
+
+<!-- original code
+{{#each states as |state|}}
+  <section data-id="{{state.id}}">
+    <h6>State Name:</h6>
+    <h5>
+      {{state.state_name}}
+    </h5>
+    <h6>Date Visited:</h6>
+    <h5>
+      {{state.date_visited}}
+    </h5>
+    <h6>Highlights:</h6>
+    <h5>
+      {{state.highlight}}
+    </h5>
+    <h6>Revisit:</h6>
+    <h5>
+      {{state.revisit}}
+    </h5>
+    <p>
+
+    </p>
+  </section>
+
+{{/each}} -->

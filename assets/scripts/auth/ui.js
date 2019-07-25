@@ -70,7 +70,10 @@ const signInSuccessful = responseData => {
   $('#sign-up').hide()
   $('#account-btn').show()
   $('#message').hide()
+  $('#create-state-btn').show()
+  $('#view-your-states-btn').show()
   $('#or').hide()
+
 }
 
 const signInFailure = responseData => {
@@ -91,6 +94,10 @@ const signOutSuccessful = () => {
   $('#sign-out').hide()
   $('#sign-up').show()
   $('#sign-in').show()
+  $('#create-state').hide()
+  $('#content').hide()
+  $('#create-state-btn').hide()
+  $('#view-your-states-btn').hide()
   $('form').trigger('reset')
 }
 

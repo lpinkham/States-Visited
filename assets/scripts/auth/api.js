@@ -41,10 +41,7 @@ const signOut = () => {
 }
 
 const createNewState = formData => {
-  // console.log('formData:', formData)
-  // console.log('store.user.id is ', store.user.id)
-  console.log('in createNewState and store.user.token is ', store.user.token)
-  return $.ajax({
+return $.ajax({
     url: config.apiUrl + '/states/',
     method: 'POST',
     headers: {
@@ -93,13 +90,18 @@ const getBooks = function () {
   })
 }
 
-const deleteBook = function (id) {
+// need to pass token
+const deleteYourStates = function (id) {
+  console.log('api deleteYourStates ', id)
   return $.ajax({
-    // url: `${config.apiUrl/books/${id}}`, this is using string interpolation.
-    url: config.apiUrl + '/states/' + id,
-    method: 'DELETE'
+  url: config.apiUrl + '/states/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
+
 // end of added for handlebars
 
 module.exports = {
@@ -111,6 +113,6 @@ module.exports = {
   updateState,
   getStates,
   getBooks,
-  deleteBook,
+  deleteYourStates,
   getYourStates
 }

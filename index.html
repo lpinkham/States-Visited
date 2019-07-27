@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>States Visited</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,8 +12,11 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <!-- stuff added from tic tac toe for user login -->
-      <div class="my-account" id="account-text"><button class="hide" id="account-btn">My Account</button>
+      <div class="row right-align">
+        <div class="col-12"><button class="btn btn-info mr-2" id="register-btn">Register</button>
+                            <button class="btn btn-info mr-2" id="signin-btn">Sign-in</button></div>
+      </div>
+      <div class="my-account" id="account-text"><button class="btn btn-info mr-2 hide" id="account-btn">My Account</button>
     </div>
     <div class="hide" id="myAccount">
       <form id="change-password" class="">
@@ -30,35 +33,36 @@
 
       <div id="sign-in-up">
       <div class="form">
-      <form id="sign-in" class="center">
+      <form id="sign-in" class="center hide">
         <input type="email" name="credentials[email]" placeholder="Enter email address"><br />
         <input type="password" name="credentials[password]" placeholder="Password"><br />
         <button class="btn-primary" id="sign-in-btn">Sign-In!</button>
       </form>
-<!-- <h6 id="or" class="center">or</h6> -->
-      <form id="sign-up" class="center">
-        <h5>Sign Up</h5>
+      <!-- <h6 id="or" class="center">or</h6> -->
+      <form id="sign-up" class="center hide">
+        <h5>Register</h5>
         <input type="email" name="credentials[email]" placeholder="email address (not a real one)"><br>
         <input type="password" name="credentials[password]" placeholder="Password"><br>
         <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br>
-        <button class="btn-primary">Sign-Up!</button>
+        <button class="btn-primary">Register!</button>
       </form>
     </div>
     </div>
-      <!-- end of stuff added from tic tac toe for user login -->
+      <!-- user login -->
       <div class="row">
             <div class="col-12"><h1>States Visited</h1></div>
         </div>
         <div class="row">
-            <div class="col-12">Want to keep track of all the states you have visited? This app will help you and allow you to add notes about each one to remind you of your memories. Get started by
+            <div class="col-12 description center">Want to keep track of all the states you have visited? This app will help with that and allow you to add notes about each one to remind you of your memories. Get started by
           logging in or creating an account.</div>
             </div>
         <div class="row">
-          <div class="col-12"><img class="map-image mh-100 center" src="images/USA_map.png" alt="map of USA"></div>
+          <div class="col-12  center"><img class="map-image mh-100" src="/images/USA_map.png" alt="map of USA"></div>
         </div>
+
         <div class="row">
-            <div class="col-6 box"><button id="create-state-btn" class="btn btn-info mr-2">Create or add to your list of states!</button></div>
-            <div class="col-6 box"><button id="view-your-states-btn" class="btn btn-info mr-2">View your states!</button></div>
+            <div class="col-6 box"><button id="create-state-btn" class="btn btn-info mr-2 hide">Create or add to your list of states!</button></div>
+            <div class="col-6 box"><button id="view-your-states-btn" class="btn btn-info mr-2 hide">View your states!</button></div>
         </div>
         <div class="row">
           <div class="col-6 center">
@@ -87,23 +91,36 @@
           <!-- see all states - not just for the logged in user -->
           <!-- <div class="col-12 box"><button class="btn-primary" id="get-all-states">See everyones states</button></div>
         </div> -->
-        <!-- <form id="update-state" class="center">
-        <h5>Update your state</h5>
-        <input type="text" name="state[id]" required placeholder="State Id"><br>
-        <input type="text" name="state[state_name]" required placeholder="State Name"><br>
-        <input type="text" name="state[date_visited]" placeholder="YYYY-MM-DD" required
-            pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
-            title="Enter a date in this format YYYY-MM-DD"/><br>
-        <input type="text" name="state[highlight]" placeholder="Highlight of your visit"><br>
-        <input type="radio" name="state[revisit]" value="true" checked>Yes, I would go back<br>
-        <input type="radio" name="state[revisit]" value="false"> No, I wouldn't go back<br>
-        <button class="btn-primary">Update!</button>
-        </form> -->
+
+
+
       <main>
         <!-- used for Handlebars -->
         <div id="content" class="content"></div>
       </main>
-
+      <div class="row">
+          <div class="col-6">
+            <form id="update-state" class="center hide">
+            <h4>Update a state</h4>
+            <input type="text" name="state[id]" required placeholder="State Id"><br>
+            <input type="text" name="state[state_name]" required placeholder="State Name"><br>
+            <input type="text" name="state[date_visited]" placeholder="YYYY-MM-DD" required
+                pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+                title="Enter a date in this format YYYY-MM-DD"/><br>
+            <input type="text" name="state[highlight]" placeholder="Highlight of your visit"><br>
+            <input type="radio" name="state[revisit]" value="true" checked>Yes, I would go back<br>
+            <input type="radio" name="state[revisit]" value="false"> No, I wouldn't go back<br>
+            <button class="btn-primary">Update State!</button>
+          </form>
+        </div>
+          <div class="col-6">
+            <form id="delete-state" class="center hide">
+            <h4>Delete a state</h4>
+            <input type="text" name="state[id]" required placeholder="State Id"><br>
+            <button class="btn-primary">Delete State!</button>
+          </form>
+        </div>
+      </div>
 
     </body>
 </html>

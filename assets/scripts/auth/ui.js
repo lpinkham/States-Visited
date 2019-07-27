@@ -4,7 +4,7 @@ const store = require('../store')
 const showStatesTemplate = require('../templates/state-listing.handlebars')
 
 const signUpSuccessful = responseData => {
-  successMessage('You signed up successfully')
+  successMessage('You registered successfully')
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#sign-up').hide()
@@ -13,7 +13,7 @@ const signUpSuccessful = responseData => {
 }
 
 const signUpFailure = responseData => {
-  failureMessage('You failed to sign up')
+  failureMessage('We were unable to complete your registration')
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#sign-up').show()

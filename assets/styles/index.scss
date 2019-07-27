@@ -13,9 +13,20 @@ body {
 h1 {
   color: dark gray;
   text-align: center;
+  font-family: fantasy;
+  padding-top: 20px;
 }
 form {
   margin: 20px;
+}
+
+td {
+  font-family: fantasy;
+  color: black;
+}
+p {
+  color: darkgray;
+  padding: 20px;
 }
 
 .box {
@@ -31,6 +42,12 @@ form {
 .center {
   align-items: center;
   text-align: center;
+}
+
+.description {
+  font-family: fantasy;
+  color: darkgray;
+  padding-bottom: 40px;
 }
 
 // .alt-color {
@@ -52,6 +69,10 @@ form {
 .my-account {
   font-size: .75em;
   text-align: right;
+}
+.right-align {
+  text-align: right;
+  align-items: center;
 }
 .sign-in-button {
   border: 0;

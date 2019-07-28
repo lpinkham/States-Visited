@@ -29,11 +29,11 @@ const signInSuccessful = responseData => {
   $('#message').hide()
   $('#create-state-btn').show()
   $('#view-your-states-btn').show()
-  $('#update-state').show()
-  $('#delete-state').show()
+  $('#delete-states-btn').show()
+  $('#update-state-btn').show()
   $('#register-btn').hide()
   $('#signin-btn').hide()
-  $('#or').hide()
+  // $('#or').hide()
 
 }
 
@@ -64,6 +64,8 @@ const signOutSuccessful = () => {
   $('#register-btn').show()
   $('#account-btn').hide()
   $('#signin-btn').show()
+  $('#update-state-btn').hide()
+  $('#delete-states-btn').hide()
   $('form').trigger('reset')
 }
 
@@ -93,6 +95,8 @@ const getStatesSuccess = (data) => {
   const showStatesHtml = showStatesTemplate({ states: data.states })
   $('.content').html(showStatesHtml)
   $('#create-state').hide()
+  $('#update-state').hide()
+  $('#delete-state').hide()
 }
 
 // const clearBooks = () => {
@@ -145,6 +149,20 @@ const showRegisterForm = () => {
 }
 const showStateForm = () => {
   $('#create-state').show()
+  $('#delete-state').hide()
+  $('#update-state').hide()
+}
+
+const showDeleteForm = () => {
+  $('#delete-state').show()
+  $('#create-state').hide()
+  $('#update-state').hide()
+}
+
+const showUpdateForm = () => {
+  $('#delete-state').hide()
+  $('#create-state').hide()
+  $('#update-state').show()
 }
 
 module.exports = {
@@ -169,5 +187,7 @@ module.exports = {
   showMyAccount,
   showSignInForm,
   showRegisterForm,
-  showStateForm
+  showStateForm,
+  showDeleteForm,
+  showUpdateForm
 }

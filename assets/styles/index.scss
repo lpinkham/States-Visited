@@ -19,7 +19,9 @@ h1 {
 form {
   margin: 20px;
 }
-
+label {
+  align-items: baseline;
+}
 td {
   font-family: fantasy;
   color: black;

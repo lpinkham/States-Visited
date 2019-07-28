@@ -62,7 +62,7 @@ const onUpdateState = event => {
   const form = event.target
   const formData = getFormFields(form)
   api.updateState(formData)
-    .then(ui.updateStateSuccessful)
+    .then(onGetYourStates)
     .catch(ui.updateStateFailure)
 }
 
@@ -84,7 +84,7 @@ const onDeleteYourStates = (event) => {
   const form = event.target
   const formData = getFormFields(form)
   api.deleteYourStates(formData.state.id)
-    .then(ui.deleteStatesSuccess)
+    .then(onGetYourStates)
     .catch(ui.deleteStatesFailure)
 }
 

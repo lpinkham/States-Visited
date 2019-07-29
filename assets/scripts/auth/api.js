@@ -90,7 +90,6 @@ const getBooks = function () {
   })
 }
 
-// need to pass token
 const deleteYourStates = function (id) {
   console.log('api deleteYourStates ', id)
   return $.ajax({

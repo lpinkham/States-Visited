@@ -97,18 +97,12 @@ const getStatesSuccess = (data) => {
   $('#create-state').hide()
   $('#update-state').hide()
   $('#delete-state').hide()
+  $('form').trigger('reset')
 }
-
-// const clearBooks = () => {
-//   $('.content').empty()
-// }
 
 const getStateFailure = responseData => {
   failureMessage('We were unable to retrieve your states.')
 }
-// const failure = (error) => {
-//   console.error(error)
-// }
 
 const createStateSuccessful = responseData => {
   successMessage('We added the new state to your list.')
@@ -124,6 +118,7 @@ const updateStateFailure = responseData => {
 
 const updateStateSuccessful = responseData => {
   successMessage('We updated the new state to your list.')
+  $('#form').trigger('reset')
 }
 
 const deleteStatesSuccess = responseData => {
@@ -165,10 +160,6 @@ const showUpdateForm = () => {
   $('#update-state').show()
 }
 
-const colorAK = () => {
-$('#ak').css('fill', 'green')
-}
-
 module.exports = {
   signUpSuccessful,
   signUpFailure,
@@ -193,6 +184,5 @@ module.exports = {
   showRegisterForm,
   showStateForm,
   showDeleteForm,
-  showUpdateForm,
-  colorAK
+  showUpdateForm
 }

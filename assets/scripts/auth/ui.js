@@ -165,6 +165,10 @@ const showUpdateForm = () => {
   $('#update-state').show()
 }
 
+const colorAK = () => {
+$('#ak').css('fill', 'green')
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
@@ -189,5 +193,6 @@ module.exports = {
   showRegisterForm,
   showStateForm,
   showDeleteForm,
-  showUpdateForm
+  showUpdateForm,
+  colorAK
 }

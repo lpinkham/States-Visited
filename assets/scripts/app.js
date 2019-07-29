@@ -17,7 +17,8 @@ $(() => {
   $('#delete-state').on('submit', authEvents.onDeleteYourStates)
   $('#register-btn').on('click', ui.showRegisterForm)
   $('#signin-btn').on('click', ui.showSignInForm)
+  $('#delete-states-btn').on('click', ui.showDeleteForm)
+  $('#update-state-btn').on('click', ui.showUpdateForm)
 
-$('#delete-states-btn').on('click', ui.showDeleteForm)
-$('#update-state-btn').on('click', ui.showUpdateForm)  
+  $('#ak').on('click', ui.colorAK)
 })

@@ -66,10 +66,6 @@ const getStates = () => {
   return $.ajax({
     url: config.apiUrl + '/states/',
     method: 'GET'
-    // headers: {
-    //   Authorization: 'Token token=' + store.user.token
-    // },
-    // data: formData.state
   })
 }
 
@@ -80,13 +76,6 @@ const getYourStates = () => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
-  })
-}
-
-// added for Handlebars
-const getBooks = function () {
-  return $.ajax({
-    url: config.apiUrl + '/states'
   })
 }
 
@@ -101,8 +90,6 @@ const deleteYourStates = function (id) {
   })
 }
 
-// end of added for handlebars
-
 module.exports = {
   signUp,
   signIn,
@@ -111,7 +98,6 @@ module.exports = {
   createNewState,
   updateState,
   getStates,
-  getBooks,
   deleteYourStates,
   getYourStates
 }

@@ -80,7 +80,6 @@ const getYourStates = () => {
 }
 
 const deleteYourStates = function (id) {
-  console.log('api deleteYourStates ', id)
   return $.ajax({
   url: config.apiUrl + '/states/' + id,
     method: 'DELETE',

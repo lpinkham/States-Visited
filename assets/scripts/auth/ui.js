@@ -91,7 +91,7 @@ const failureMessage = message => {
 }
 
 const getStatesSuccess = (data) => {
-  $('#message').hide()
+  // $('#message').hide()
   const showStatesHtml = showStatesTemplate({ states: data.states })
   $('.content').html(showStatesHtml)
   $('#create-state').hide()
@@ -102,30 +102,36 @@ const getStatesSuccess = (data) => {
 
 const getStateFailure = responseData => {
   failureMessage('We were unable to retrieve your states.')
+  $('form').trigger('reset')
 }
 
 const createStateSuccessful = responseData => {
   successMessage('We added the new state to your list.')
+  $('form').trigger('reset')
 }
 
 const createStateFailure = responseData => {
   failureMessage('We were unable to create your record.')
+  $('form').trigger('reset')
 }
 
 const updateStateFailure = responseData => {
   failureMessage('We were unable to update your record.')
+  $('form').trigger('reset')
 }
 
 const updateStateSuccessful = responseData => {
-  successMessage('We updated the new state to your list.')
+  successMessage('We updated the state.')
   $('#form').trigger('reset')
 }
 
 const deleteStatesSuccess = responseData => {
   successMessage('We deleted the state.')
+  $('form').trigger('reset')
 }
 const deleteStatesFailure = responseData => {
-  successMessage('We were not able to delete the state.')
+  failureMessage('We were not able to delete the state.')
+  $('form').trigger('reset')
 }
 
 const showMyAccount = () => {
@@ -143,21 +149,27 @@ const showRegisterForm = () => {
   $('#sign-in').hide()
 }
 const showStateForm = () => {
+  hideMessage()
   $('#create-state').show()
   $('#delete-state').hide()
   $('#update-state').hide()
 }
 
 const showDeleteForm = () => {
+  hideMessage()
   $('#delete-state').show()
   $('#create-state').hide()
   $('#update-state').hide()
 }
 
 const showUpdateForm = () => {
+  hideMessage()
   $('#delete-state').hide()
   $('#create-state').hide()
   $('#update-state').show()
+}
+const hideMessage = () => {
+  $('#message').hide()
 }
 
 module.exports = {
@@ -184,5 +196,6 @@ module.exports = {
   showRegisterForm,
   showStateForm,
   showDeleteForm,
-  showUpdateForm
+  showUpdateForm,
+  hideMessage
 }

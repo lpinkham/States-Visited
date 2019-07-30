@@ -44,6 +44,7 @@ const onMyAccount = event => {
 }
 
 const onCreateStateForm = event => {
+  ui.hideMessage()
   event.preventDefault()
   ui.showStateForm()
 }
@@ -62,16 +63,10 @@ const onUpdateState = event => {
   const form = event.target
   const formData = getFormFields(form)
   api.updateState(formData)
+    .then(ui.updateStateSuccessful)
     .then(onGetYourStates)
     .catch(ui.updateStateFailure)
 }
-
-// this is for if/when the functionality is added for everyone to see all states records
-// const onGetAllState = (event) => {
-//   api.getStates()
-//     .then(ui.getStatesSuccess)
-//     .catch(ui.getStateFailure)
-// }
 
 const onGetYourStates = (event) => {
   api.getYourStates()
@@ -84,6 +79,7 @@ const onDeleteYourStates = (event) => {
   const form = event.target
   const formData = getFormFields(form)
   api.deleteYourStates(formData.state.id)
+    .then(ui.deleteStatesSuccess)
     .then(onGetYourStates)
     .catch(ui.deleteStatesFailure)
 }

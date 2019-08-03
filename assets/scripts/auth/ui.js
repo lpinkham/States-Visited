@@ -159,7 +159,6 @@ const showMyAccount = () => {
   } else {
       x.style.display = "none";
   }
-
   $('#change-password').show()
   $('#sign-out').show()
   $('#message').hide()
@@ -191,7 +190,6 @@ const showDeleteForm = () => {
   $('#create-state').hide()
   $('#update-state').hide()
   displayAccountFormNone()
-
 }
 
 const showUpdateForm = () => {

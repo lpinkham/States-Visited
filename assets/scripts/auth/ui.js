@@ -101,7 +101,7 @@ const getStatesSuccess = (data) => {
 
   if (data.states.length === 0) {
     failureMessage('Sorry, you have not created any states yet. Please add some and try again.')
-      $('.content').html("")
+    $('.content').html("")
   } else {
     $('#message2').show()
     $('#message2').css('color', 'green')
@@ -159,7 +159,6 @@ const showMyAccount = () => {
   } else {
       x.style.display = "none";
   }
-
   $('#change-password').show()
   $('#sign-out').show()
   $('#message').hide()
@@ -191,7 +190,6 @@ const showDeleteForm = () => {
   $('#create-state').hide()
   $('#update-state').hide()
   displayAccountFormNone()
-
 }
 
 const showUpdateForm = () => {

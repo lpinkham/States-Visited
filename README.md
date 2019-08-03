@@ -21,7 +21,7 @@ TECHNOLOGIES AND SKILLS USED:
 
 DEVELOPMENT PROCESS:
 
-My development process began with writing some users stories, drawing a wireframe and an ERD. This app requires two github repo's and heroku to host the API. I started with blank templates for the two repos and built them out from there. Starting with user auth was to me the best place to start. Once curl scripts were working I followed that with completing enough of the front-end to be able to login. Through-out the rest of the porject I made small changes, commited and tested before deploying.
+My development process began with writing some users stories, drawing a wireframe and an ERD. This app requires two github repo's and heroku to host the API. I started with blank templates for the two repos and built them out from there. Starting with user auth was to me the best place to start. Once curl scripts were working I followed that with completing enough of the front-end to be able to login. Through-out the rest of the project I made small changes, commited and tested before deploying.
 
 USER STORIES:
 1. I want a user to be able to login and enter states.
@@ -33,7 +33,7 @@ WIREFRAMES:
 https://imgur.com/Zyj4ETj
 
 PROBLEM SOLVNG STATEGIES:
-To help resolve problems along the way I used console.log to print out objects, methods or whatever was needed to guide me to where the problem was. I also refered back to classroom assignments for reference on how we performed user authenticate.
+To help resolve problems along the way I used console.log to print out objects, methods or whatever was needed to guide me to where the problem was. I also refered back to classroom assignments for reference on how we performed user authentication.
 
 
 LINK TO BACK-END repo:

@@ -33,7 +33,6 @@ const signInSuccessful = responseData => {
   $('#update-state-btn').show()
   $('#register-btn').hide()
   $('#signin-btn').hide()
-  // $('#or').hide()
 
 }
 
@@ -67,6 +66,12 @@ const signOutSuccessful = () => {
   $('#update-state-btn').hide()
   $('#delete-states-btn').hide()
   $('form').trigger('reset')
+  displayAccountFormNone()
+}
+
+const displayAccountFormNone = () => {
+  let x = document.getElementById("myAccount")
+  x.style.display = "none"
 }
 
 const signOutFailure = () => {
@@ -75,6 +80,7 @@ const signOutFailure = () => {
 
 const successMessage = message => {
   $('#message').show()
+  $('#message2').hide()
   $('#message').text(message)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
@@ -91,13 +97,21 @@ const failureMessage = message => {
 }
 
 const getStatesSuccess = (data) => {
-  // $('#message').hide()
-  const showStatesHtml = showStatesTemplate({ states: data.states })
-  $('.content').html(showStatesHtml)
-  $('#create-state').hide()
-  $('#update-state').hide()
-  $('#delete-state').hide()
-  $('form').trigger('reset')
+
+  if (data.states.length === 0) {
+    failureMessage('Sorry, you have not created any states yet. Please add some and try again.')
+  } else {
+    $('#message2').show()
+    $('#message2').css('color', 'green')
+    $('#message2').text('Your states are listed below.')
+    const showStatesHtml = showStatesTemplate({ states: data.states })
+    $('.content').html(showStatesHtml)
+    $('#create-state').hide()
+    $('#update-state').hide()
+    $('#delete-state').hide()
+    $('form').trigger('reset')
+    displayAccountFormNone()
+  }
 }
 
 const getStateFailure = responseData => {
@@ -135,9 +149,18 @@ const deleteStatesFailure = responseData => {
 }
 
 const showMyAccount = () => {
-  $('#myAccount').show()
+
+  let x = document.getElementById("myAccount")
+  if (x.style.display === "none") {
+    x.style.display = "block"
+  } else {
+      x.style.display = "none";
+  }
+
   $('#change-password').show()
   $('#sign-out').show()
+  $('#message').hide()
+  $('#message2').hide()
 }
 
 const showSignInForm = () => {
@@ -153,23 +176,32 @@ const showStateForm = () => {
   $('#create-state').show()
   $('#delete-state').hide()
   $('#update-state').hide()
+  displayAccountFormNone()
 }
 
 const showDeleteForm = () => {
   hideMessage()
+  hideMessage2()
   $('#delete-state').show()
   $('#create-state').hide()
   $('#update-state').hide()
+  displayAccountFormNone()
+
 }
 
 const showUpdateForm = () => {
   hideMessage()
+  hideMessage2()
   $('#delete-state').hide()
   $('#create-state').hide()
   $('#update-state').show()
+  displayAccountFormNone()
 }
 const hideMessage = () => {
   $('#message').hide()
+}
+const hideMessage2 = () => {
+  $('#message2').hide()
 }
 
 module.exports = {
@@ -197,5 +229,6 @@ module.exports = {
   showStateForm,
   showDeleteForm,
   showUpdateForm,
-  hideMessage
+  hideMessage,
+  hideMessage2
 }

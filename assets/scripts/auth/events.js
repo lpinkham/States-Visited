@@ -45,6 +45,7 @@ const onMyAccount = event => {
 
 const onCreateStateForm = event => {
   ui.hideMessage()
+  ui.hideMessage2()
   event.preventDefault()
   ui.showStateForm()
 }
@@ -54,6 +55,7 @@ const onCreateState = event => {
   const form = event.target
   const formData = getFormFields(form)
   api.createNewState(formData)
+    .then(ui.createStateSuccessful)
     .then(onGetYourStates)
     .catch(ui.createStateFailure)
 }

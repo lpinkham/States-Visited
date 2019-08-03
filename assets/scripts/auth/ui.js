@@ -87,6 +87,7 @@ const successMessage = message => {
   $('#message').css('color', 'green')
   $('form').trigger('reset')
 }
+
 const failureMessage = message => {
   $('#message').show()
   $('#message').text(message)
@@ -100,6 +101,7 @@ const getStatesSuccess = (data) => {
 
   if (data.states.length === 0) {
     failureMessage('Sorry, you have not created any states yet. Please add some and try again.')
+      $('.content').html("")
   } else {
     $('#message2').show()
     $('#message2').css('color', 'green')
@@ -143,6 +145,7 @@ const deleteStatesSuccess = responseData => {
   successMessage('We deleted the state.')
   $('form').trigger('reset')
 }
+
 const deleteStatesFailure = responseData => {
   failureMessage('We were not able to delete the state.')
   $('form').trigger('reset')
@@ -167,10 +170,12 @@ const showSignInForm = () => {
   $('#sign-in').show()
   $('#sign-up').hide()
 }
+
 const showRegisterForm = () => {
   $('#sign-up').show()
   $('#sign-in').hide()
 }
+
 const showStateForm = () => {
   hideMessage()
   $('#create-state').show()
@@ -197,9 +202,11 @@ const showUpdateForm = () => {
   $('#update-state').show()
   displayAccountFormNone()
 }
+
 const hideMessage = () => {
   $('#message').hide()
 }
+
 const hideMessage2 = () => {
   $('#message2').hide()
 }

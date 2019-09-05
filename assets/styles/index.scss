@@ -8,6 +8,8 @@ $font-color: $light;
 body {
   background-color: $white;
   padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 h1 {
@@ -19,13 +21,16 @@ h1 {
 form {
   margin: 20px;
 }
+
 label {
   align-items: baseline;
 }
+
 td {
   font-family: fantasy;
   color: black;
 }
+
 p {
   color: darkgray;
   padding: 20px;
@@ -50,14 +55,15 @@ p {
   font-family: fantasy;
   color: darkgray;
   padding-bottom: 40px;
+  font-size: 1.5em;
 }
 
 .hide {
-  display: none; 
+  display: none;
 }
 
 .map-image {
-  width: 90%;
+  width: 75%;
 }
 
 .message-header {

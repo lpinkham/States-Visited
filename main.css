@@ -1,0 +1,42 @@
+#us-map{
+  display: block;
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 10%; */
+  text-align: center;
+  width: 80%;
+  height: 80%;
+}
+
+svg {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+path:hover, circle:hover {
+  stroke: #5bc0de !important;
+  stroke-width:2px;
+  stroke-linejoin: round;
+  fill: #0e9aa7 !important;
+  cursor: pointer;
+}
+#path67 {
+  fill: none !important;
+  stroke: #A9A9A9 !important;
+  cursor: default;
+}
+#info-box {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid #817b7b;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: arial;
+}
+
+/* #FL {
+  fill: orange !important } */

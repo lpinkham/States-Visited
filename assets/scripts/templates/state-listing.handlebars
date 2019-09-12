@@ -1,5 +1,6 @@
 {{#each states as |state|}}
-  <section data-id="{{state.id}}" class="center">
+
+  <section data-id="{{state.id}}" id={{state.id}} data-state={{state.state_name}} class="center">
     <table class="center">
       <tr>
         <td><h5>State Name:</h5></td>
@@ -20,6 +21,10 @@
       <tr>
         <td><h5>State ID:</h5></td>
         <td><p>  {{state.id}}  </p></td>
+      </tr>
+      <tr>
+        <td><button class="btn-info mr-2 edit-btn" id="edit-btn">Edit</button></td>
+        <td><button id="delete-states-btn" class="btn-info mr-2 delete-states-btn">Delete</button></td>
       </tr>
   </table>
 

@@ -79,6 +79,17 @@ const getYourStates = () => {
   })
 }
 
+//get single state for handlebars
+const getSingleState = id => {
+  return $.ajax({
+    url: config.apiUrl + '/states/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const deleteYourStates = function (id) {
   return $.ajax({
   url: config.apiUrl + '/states/' + id,
@@ -98,5 +109,6 @@ module.exports = {
   updateState,
   getStates,
   deleteYourStates,
-  getYourStates
+  getYourStates,
+  getSingleState
 }

@@ -1,0 +1,105 @@
+<div>
+<form id="create-state" class="create-state">
+    <h5>Add a state to your list</h5>
+    <label for="state[state_name]">State Name:</label>
+    <!-- <input type="text" name="state[state_name]" required><br> -->
+    <select name="state[state_name]" required>
+            <option value="Alabama">Alabama</option>
+            <option value="Alaska">Alaska</option>
+            <option value="Arizona">Arizona</option>
+            <option value="Arkansas">Arkansas</option>
+            <option value="California">California</option>
+            <option value="Colorado">Colorado</option>
+            <option value="Connecticut">Connecticut</option>
+            <option value="Delaware">Delaware</option>
+            <option value="District Of Columbia">District Of Columbia</option>
+            <option value="Florida">Florida</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Hawaii">Hawaii</option>
+            <option value="Idaho">Idaho</option>
+            <option value="Illinois">Illinois</option>
+            <option value="Indiana">Indiana</option>
+            <option value="Iowa">Iowa</option>
+            <option value="Kansas">Kansas</option>
+            <option value="Kentucky">Kentucky</option>
+            <option value="Louisiana">Louisiana</option>
+            <option value="Maine">Maine</option>
+            <option value="Maryland">Maryland</option>
+            <option value="Massachusetts">Massachusetts</option>
+            <option value="Michigan">Michigan</option>
+            <option value="Minnesota">Minnesota</option>
+            <option value="Mississippi">Mississippi</option>
+            <option value="Missouri">Missouri</option>
+            <option value="Montana">Montana</option>
+            <option value="Nebraska">Nebraska</option>
+            <option value="Nevada">Nevada</option>
+            <option value="New Hampshire">New Hampshire</option>
+            <option value="New Jersey">New Jersey</option>
+            <option value="New Mexico">New Mexico</option>
+            <option value="New York">New York</option>
+            <option value="North Carolina">North Carolina</option>
+            <option value="North Dakota">North Dakota</option>
+            <option value="Ohio">Ohio</option>
+            <option value="Oklahoma">Oklahoma</option>
+            <option value="Oregon">Oregon</option>
+            <option value="Pennsylvania">Pennsylvania</option>
+            <option value="Rhode Island">Rhode Island</option>
+            <option value="South Carolina">South Carolina</option>
+            <option value="South Dakota">South Dakota</option>
+            <option value="Tennessee">Tennessee</option>
+            <option value="Texas">Texas</option>
+            <option value="Utah">Utah</option>
+            <option value="Vermont">Vermont</option>
+            <option value="Virginia">Virginia</option>
+            <option value="Washington">Washington</option>
+            <option value="West Virginia">West Virginia</option>
+            <option value="Wisconsin">Wisconsin</option>
+            <option value="Wyoming">Wyoming</option>
+</select><br />
+    <label for="state[date_visited]">Date Visited:</label><input type="text" name="state[date_visited]" placeholder="YYYY-MM-DD" required
+    pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+    title="Enter a date in this format YYYY-MM-DD"/><br>
+    <label for="state[revisit]">Would you go back for a visit?</label><br>
+    <input type="radio" name="state[revisit]" value="true" checked>Yes, I would go back<br>
+    <input type="radio" name="state[revisit]" value="false"> No, I wouldn't go back<br>
+    <label for="state[highlight]">Highlight:</label>
+    <textarea name="state[highlight]" rows="3" required></textarea><br>
+    <button class="btn-info mr-2">Add!</button>
+  </form>
+
+</div>
+
+
+<!-- {{#each states as |state|}}
+
+  <section data-id="{{state.id}}" id={{state.id}} data-state={{state.state_name}} class="center">
+    <table class="center">
+      <tr>
+        <td><h5>State Name:</h5></td>
+        <td><p>  {{state.state_name}}  </p></td>
+      </tr>
+      <tr>
+        <td><h5>Date Visited:</h5></td>
+        <td><p>  {{state.date_visited}}  </p></td>
+      </tr>
+      <tr>
+          <td><h5>Highlights:</h5></td>
+          <td><p> {{state.highlight}}  </p></td>
+      </tr>
+      <tr>
+        <td><h5>Revisit:</h5></td>
+        <td><p>  {{state.revisit}} </p></td>
+      </tr>
+      <tr>
+        <td><h5>State ID:</h5></td>
+        <td><p>  {{state.id}}  </p></td>
+      </tr>
+      <tr>
+        <td><button class="btn-info mr-2 edit-btn" id="edit-btn">Edit</button></td>
+        <td><button id="delete-states-btn" class="btn-info mr-2 delete-states-btn">Delete</button></td>
+      </tr>
+  </table>
+
+  </section>
+
+{{/each}} -->

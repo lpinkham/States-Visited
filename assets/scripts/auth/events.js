@@ -21,10 +21,6 @@ const onSignIn = event => {
     .then(ui.signInSuccessful)
     .then(onGetYourStates)
     .catch(ui.signInFailure)
-  // .then(api.getYourStates())
-  //     .then(ui.getStatesSuccess)
-  //     .catch(ui.getStateFailure)
-
 }
 
 
@@ -50,18 +46,12 @@ const onMyAccount = event => {
 }
 
 const onCreateStateForm = event => {
-  // check if state already exist.
-  // would be nice to load the edit state form if it exist
-
-  // ui.hideMessage()
-  // ui.hideMessage2()
   event.preventDefault()
   ui.showStateForm(event.target.id)
 }
 
 const onCreateState = event => {
   event.preventDefault()
-  // console.log('in onCreateState in events.')
   const form = event.target
   const formData = getFormFields(form)
   api.createNewState(formData)
@@ -83,7 +73,6 @@ const onUpdateState = event => {
 const onEditState = (event) => {
   // get the id by from the section that has the bucket id as data-id
   const id = $(event.target).closest('section').data('id')
-  // console.log('id in onEditState is ', id)
   api.getSingleState(id)
     .then(ui.editHandlebarsFunction)
     .catch(ui.onUpdateBucket)
@@ -95,23 +84,10 @@ const onGetYourStates = (event) => {
     .catch(ui.getStateFailure)
 }
 
-// const onDeleteYourStates = (event) => {
-//   event.preventDefault()
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   api.deleteYourStates(formData.state.id)
-//     .then(ui.deleteStatesSuccess)
-//     .then(onGetYourStates)
-//     .catch(ui.deleteStatesFailure)
-// }
-
 // this delete is used in handlebars. It only needs the id, there is no form.
 const onDeleteYourStates = (event) => {
-  // console.log('testing data is', )
-  // console.log('onDeleteYourStates event is ', event.target)
   const id = $(event.target).closest('section').data('id')
   const stateName = $(event.target).closest('section').data('state')
-  // console.log('state is ', stateName)
   api.deleteYourStates(id)
     .then(ui.deleteStatesSuccess(stateName))
     .then(onGetYourStates)
@@ -119,7 +95,6 @@ const onDeleteYourStates = (event) => {
 }
 
 const onCancel = event => {
-  // hide the message and then run onGetYourStates
   $('#state-message').html("")
   onGetYourStates()
 }

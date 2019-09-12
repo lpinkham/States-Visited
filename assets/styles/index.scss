@@ -50,9 +50,16 @@ svg {
   justify-content: center;
 }
 
+.cancel-add {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
 .center {
   align-items: center;
   text-align: center;
+
 }
 
 .description {
@@ -98,9 +105,6 @@ svg {
 .stateform {
   display: flex;
   justify-content: center;
-  // align-items: center;
-  // text-align: center;
-  // border: 1px solid green;
   margin-left: auto;
   margin-right: auto;
 
@@ -114,7 +118,6 @@ svg {
 .create-state {
   align-items: baseline;
   background-color: white;
-  border: 1px solid black;
   font-family: fantasy;
   margin: 5px;
   padding: 25px;

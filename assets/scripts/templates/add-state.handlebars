@@ -2,7 +2,6 @@
 <form id="create-state" class="create-state">
     <h5>Add a state to your list</h5>
     <label for="state[state_name]">State Name:</label>
-    <!-- <input type="text" name="state[state_name]" required><br> -->
     <select name="state[state_name]" required>
             <option value="Alabama">Alabama</option>
             <option value="Alaska">Alaska</option>
@@ -55,51 +54,20 @@
             <option value="West Virginia">West Virginia</option>
             <option value="Wisconsin">Wisconsin</option>
             <option value="Wyoming">Wyoming</option>
-</select><br />
+    </select><br />
+
     <label for="state[date_visited]">Date Visited:</label><input type="text" name="state[date_visited]" placeholder="YYYY-MM-DD" required
     pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
     title="Enter a date in this format YYYY-MM-DD"/><br>
+
     <label for="state[revisit]">Would you go back for a visit?</label><br>
     <input type="radio" name="state[revisit]" value="true" checked>Yes, I would go back<br>
     <input type="radio" name="state[revisit]" value="false"> No, I wouldn't go back<br>
+
     <label for="state[highlight]">Highlight:</label>
     <textarea name="state[highlight]" rows="3" required></textarea><br>
+
     <button class="btn-info mr-2">Add!</button>
   </form>
 
 </div>
-
-
-<!-- {{#each states as |state|}}
-
-  <section data-id="{{state.id}}" id={{state.id}} data-state={{state.state_name}} class="center">
-    <table class="center">
-      <tr>
-        <td><h5>State Name:</h5></td>
-        <td><p>  {{state.state_name}}  </p></td>
-      </tr>
-      <tr>
-        <td><h5>Date Visited:</h5></td>
-        <td><p>  {{state.date_visited}}  </p></td>
-      </tr>
-      <tr>
-          <td><h5>Highlights:</h5></td>
-          <td><p> {{state.highlight}}  </p></td>
-      </tr>
-      <tr>
-        <td><h5>Revisit:</h5></td>
-        <td><p>  {{state.revisit}} </p></td>
-      </tr>
-      <tr>
-        <td><h5>State ID:</h5></td>
-        <td><p>  {{state.id}}  </p></td>
-      </tr>
-      <tr>
-        <td><button class="btn-info mr-2 edit-btn" id="edit-btn">Edit</button></td>
-        <td><button id="delete-states-btn" class="btn-info mr-2 delete-states-btn">Delete</button></td>
-      </tr>
-  </table>
-
-  </section>
-
-{{/each}} -->

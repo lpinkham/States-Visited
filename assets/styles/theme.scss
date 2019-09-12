@@ -13,9 +13,6 @@ main {
     @include media-breakpoint-up(md) {
       @include make-col(6);
     }
-    // @include media-breakpoint-up(lg) {
-    //   @include make-col(4);
-    // }
     background: $white;
     border: 1px solid;
     margin: -1px;

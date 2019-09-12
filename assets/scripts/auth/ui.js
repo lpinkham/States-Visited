@@ -22,10 +22,6 @@ const signInSuccessful = responseData => {
   $('#account-btn').show()
   $('#register-btn').hide()
   $('#signin-btn').hide()
-  // $('#create-state-btn').show()
-  // $('#view-your-states-btn').show()
-  // $('#delete-states-btn').show()
-  // $('#update-state-btn').show()
   $('#content').show()
   $('#interactive-map').show()
   $('#hp-map').hide()
@@ -56,8 +52,7 @@ const signOutSuccessful = () => {
   $('#account-btn').hide()
   $('#signin-btn').show()
   $('#create-state').hide()
-  // $('#update-state').hide()
-  // $('#delete-state').hide()
+  $('#cancel-add-btn').hide()
   $('#content').hide()
   $('#create-state-btn').hide()
   $('#view-your-states-btn').hide()
@@ -100,6 +95,7 @@ const getStatesSuccess = (data) => {
     const showStatesHtml = showStatesTemplate({ states: data.states })
     $('.content').html(showStatesHtml)
     $('#create-state').hide()
+    $('#cancel-add-btn').hide()
     $('#update-state').hide()
     $('#delete-state').hide()
     $('form').trigger('reset')
@@ -151,39 +147,23 @@ const showStateForm = (state) => {
     let name = state.split('_').join(' ')
     $('#state_name').val(name)
     $('#create-state').show()
+    $('#cancel-add-btn').show()
   } else {
       if (store.states.includes(state)) {
        $('#state-message').show()
        $('#state-message').html("<h3>This state already exist. Please click edit below to modify this state.</h3>")
        $('#create-state').hide()
+       $('#cancel-add-btn').hide()
      } else {
        $('#state-message').hide()
        // check if state has an _ in the name and change it to a space
        let name = state.split('_').join(' ')
        $('#state_name').val(name)
        $('#create-state').show()
+       $('#cancel-add-btn').show()
      }
-
-
-      // $('#state-message').show()
-      // $('#state-message').html("<h3>This state already exist. Please click edit below to modify this state.</h3>")
-      // $('#create-state').hide()
-     }
+   }
 }
-
-
-// if (store.states.includes(state)) {
-//   $('#state-message').show()
-//   $('#state-message').html("<h3>This state already exist. Please click edit below to modify this state.</h3>")
-//   $('#create-state').hide()
-// } else {
-//   $('#state-message').hide()
-//   // check if state has an _ in the name and change it to a space
-//   let name = state.split('_').join(' ')
-//   $('#state_name').val(name)
-//   $('#create-state').show()
-// }
-// }
 
 const showAddStateForm = (event) => {
   const id = event.target.id
@@ -194,12 +174,14 @@ const showAddStateForm = (event) => {
 const showDeleteForm = () => {
   $('#delete-state').show()
   $('#create-state').hide()
+  $('#cancel-add-btn').hide()
   $('#update-state').hide()
 }
 
 const showUpdateForm = () => {
   $('#delete-state').hide()
   $('#create-state').hide()
+  $('#cancel-add-btn').hide()
   $('#update-state').show()
 }
 
@@ -210,13 +192,11 @@ const showAlert = (message, type) => {
   setTimeout(() => $messages.html(''), 3000)
 }
 
-
 // edit form in handlebars
 const editHandlebarsFunction = responseData => {
   const showEditStateHTML = showEditStateTemplate({ state: responseData.state })
   $(`#${responseData.state.id}`).html(showEditStateHTML)
 }
-
 
 module.exports = {
   signUpSuccessful,
